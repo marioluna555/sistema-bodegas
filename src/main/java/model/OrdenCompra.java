@@ -1,0 +1,38 @@
+package model;
+
+import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
+@Table(name = "orden_compra")
+public class OrdenCompra {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private Date fecha;
+    private Material material;
+    private double cantidad;
+    private String usuario;
+    private boolean recibido;
+    private String observaciones;
+
+    // Getters y setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public Date getFecha() { return fecha; }
+    public void setFecha(Date fecha) { this.fecha = fecha; }
+    public Material getMaterial() { return material; }
+    public void setMaterial(Material material) { this.material = material; }
+    public double getCantidad() { return cantidad; }
+    public void setCantidad(double cantidad) { this.cantidad = cantidad; }
+    public String getUsuario() { return usuario; }
+    public void setUsuario(String usuario) { this.usuario = usuario; }
+    public boolean isRecibido() { return recibido; }
+    public void setRecibido(boolean recibido) { this.recibido = recibido; }
+    public String getObservaciones() { return observaciones; }
+    public void setObservaciones(String observaciones) { this.observaciones = observaciones; }
+}
